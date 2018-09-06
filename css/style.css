@@ -1,0 +1,124 @@
+@font-face {
+   font-family: "Geometria";
+   font-style: normal;
+   font-weight: normal;
+   src: url("../fonts/geometria.woff2") format("woff2"), url("../fonts/geometria.woff") format("woff");
+}
+
+@font-face {
+   font-family: "Geometria";
+   font-style: normal;
+   font-weight: 700;
+   src: url("../fonts/geometria-bold.woff2") format("woff2"), url("../fonts/geometria-bold.woff") format("woff");
+}
+
+@font-face {
+   font-family: "Muller";
+   font-style: normal;
+   font-weight: 700;
+   src: url("../fonts/ofont-ru-muller.woff2") format("woff2"), url("../fonts/ofont-ru-muller.woff") format("woff");
+}
+
+@font-face {
+   font-family: "Muller";
+   font-style: normal;
+   font-weight: normal;
+   src: url("../fonts/ofont-ru-muller.woff2") format("woff2"), url("../fonts/ofont-ru-muller.woff") format("woff");
+}
+
+body {
+  font-family: "Muller", "Arial", sans-serif;
+  font-size: 18px;
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: 1675px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+.header {
+  margin: 0 auto;
+}
+
+.header__catalog {
+background-image: url("../images/bg-top.jpg");
+background-repeat: no-repeat;
+background-position: center;
+}
+
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+  align-items: center;
+
+}
+
+.logo {
+  width: 300px;
+}
+
+.navigation__list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 30px 0;
+  align-items: center;
+  list-style: none;
+}
+
+.content-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 30px 0;
+  align-items: center;
+}
+
+.content-wrap__concert {
+  display: block;
+  width: 600px;
+  min-height: auto;
+  margin: 0;
+}
+
+.content-wrap__store {
+  display: block;
+  width: 600px;
+  min-height: auto;
+  margin: 0;
+}
+
+.media-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 30px 0;
+  align-items: center;
+}
+
+.media-wrap__text {
+  list-style-image: url("../pictures/#");
+}
+
+@media screen and (max-width: 1680px) {
+  .container {
+    width: 100%;
+  }
