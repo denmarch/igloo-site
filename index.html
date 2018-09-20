@@ -10,18 +10,31 @@
 
   <body>
     <header class="header">
-      <div class="header__catalog">
+      <div class="header__top-catalog">
         <div class="container">
           <div class="header__top">
-            <div class="header__logo logo"><img class="logo__image" src="images/logo_igloo.gif" alt="Логотип Иглу"></div>
+            <div class="header__logo logo">
+              <img class="logo__image-gif" src="images/logo_igloo.gif" alt="Логотип Иглу GIF">
+              <img class="logo__image-jpg" src="images/igloo-full-light__web.jpg" alt="Логотип Иглу JPG">
+            </div>
             <div class="header__lang">
-              <a class="header__esp-link es-link"><img class="es-link__pic" src="#" alt="Флаг Испании"></a>
-              <a class="header__esp-link en-link"><img class="en-link__pic" src="#" alt="Флаг Англии"></a>
-              <a class="header__esp-link esp-link"><img class="ru-link__pic" src="#" alt="Флаг России"></a>
+              <a class="header__link es-link">
+                <img class="es-link__pic" src="images/flag_spain.jpg" alt="Флаг Испании">
+                <div class="header__link-capture">ESP</div>
+              </a>
+              <a class="header__link en-link">
+                <img class="en-link__pic" src="images/flag_uk.jpg" alt="Флаг Англии">
+                <div class="header__link-capture">ENG</div>
+              </a>
+              <a class="header__link ru-link">
+                <img class="ru-link__pic" src="images/flag_russia.jpg" alt="Флаг России">
+                <div class="header__link-capture">RUS</div>
+              </a>
             </div>
           </div>
         </div>
        </div>
+       <div class="header__bottom-catalog">
         <div class="container">
           <div class="header__bottom">
             <nav class="header__navigation navigation">
@@ -33,15 +46,23 @@
                 <li class="navigation__item"><a class="navigation__link" href="#">Магазин</a></li>
                 <li class="navigation__item"><a class="navigation__link" href="#">Контакты</a></li>
               </ul>
-            </nav>
+             </nav>
+           </div>
           </div>
         </div>
       </header>
 
     <main class="main">
       <h1 class="visually-hidden">Иглу группа</h1>
-      <div class="banner">
-        <div class="container"></div>    <!--что тут сделать!-->
+      <div class="slider">
+        <div class="container">
+          <ul class="slider__show">
+            <li class="slider__foto slider__foto-showing"></li>
+            <li class="slider__foto slider__foto-two"></li>
+            <li class="slider__foto slider__foto-three"></li>
+            <li class="slider__foto slider__foto-four"></li>
+          </ul>
+        </div>    <!--что тут сделать!-->
       </div>
 
       <div class="content-wrapper">
@@ -49,13 +70,24 @@
           <div class="content-wrap">
             <div class="content-wrap__concert">
               <h2 class="content-wrap__title">Концерты</h2>
-              <div class="content-wrap__dates"></div>
-              <div class="content-wrap__places"></div>
-              <a class="content-wrap__link" href="#">Купить билеты</a>
+              <ul class="content-wrap__afisha">
+                <li class="content-wrap__info">
+                  <div class="content-wrap__dates">00.00.2018</div>
+                  <div class="content-wrap__places">LUGO</div>
+                  <a class="content-wrap__link" href="#">Купить билеты</a>
+                </li>
+                <li class="content-wrap__info">
+                  <div class="content-wrap__dates">00.00.2018</div>
+                  <div class="content-wrap__places">VIGO</div>
+                  <a class="content-wrap__link" href="#">Купить билеты</a>
+                </li>
+              </ul>
             </div>
             <div class="content-wrap__store">
               <h2 class="content-wrap__title">Магазин</h2>
-              <a class="content-wrap__store" href="#"><img class="content-wrap__img" src="#" alt="фото магазина"></a>
+              <a class="content-wrap__store" href="https://igloo1.bandcamp.com/music" target="_blank">
+                <img class="content-wrap__img" src="images/muppets.jpg" alt="фото магазина">
+              </a>
             </div>
           </div>
         </div>
@@ -64,19 +96,23 @@
       <div class="media-wrapper">
         <div class="container">
           <div class="media-wrap">
-            <div class="media-wrap__video">
+            <div class="media-wrap__container">
               <h2 class="media-wrap__title">Последние видео</h2>
-              <div class="media-wrap__link-video"></div>
+              <div class="media-wrap__link-video">
+                <iframe class="media-wrap__video" width="#" height="#" src="https://www.youtube.com/embed/epLWyKFKzKk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
             </div>
-            <div class="media-wrap__news">
+            <div class="media-wrap__container">
               <h2 class="media-wrap__title">Новости</h2>
               <ul class="media-wrap__list">
-                <li class="media-wrap__item"></li>
+                <li class="media-wrap__item">Horarios del Caudal Fest y menos de una semana para que se celebre.
+                  Nos vemos en Lugo el viernes 21 sept. a las 19:00h. y luego a disfrutar a todos los compañeros del cartel. “Here we go!”
+                </li>
                 <li class="media-wrap__item"></li>
                 <li class="media-wrap__item"></li>
               </ul>
             </div>
-            <div class="media-wrap__about">
+            <div class="media-wrap__container">
               <h2 class="media-wrap__title">Награды</h2>
               <ul class="media-wrap__text">
                 <li class="media-wrap__text1">2010 "Premio del Público a Los 33 de UFI".</li>
@@ -94,16 +130,19 @@
 
     <footer class="footer">
       <div class="container">
-        <div class="footer__info">
-          <div class="footer__copyright">Copyright © 2018 IGLOO. Все права защищены.</div>
-          <div class="footer__creation">Creation Denis Marchenkov © 2018</div>
-        </div>
-        <div class="footer__social">
-          <a class="footer__youtube" href="#"><img class="footer__icon"></a>
-          <a class="footer__fbk" href="#"><img class="footer__icon"></a>
-          <a class="footer__twt" href="#"><img class="footer__icon"></a>
+        <div class="footer__wrap">
+          <div class="footer__info">
+            <div class="footer__copyright">Copyright © 2018 IGLOO. Все права защищены.</div>
+            <div class="footer__creation">Creation Denis Marchenkov © 2018</div>
+          </div>
+          <div class="footer__social">
+            <a class="footer__youtube" href="#"><img class="footer__icon"></a>
+            <a class="footer__fbk" href="#"><img class="footer__icon"></a>
+            <a class="footer__twt" href="#"><img class="footer__icon"></a>
+          </div>
         </div>
       </div>
     </footer>
+    <script src="js/script.js"></script>
   </body>
 </html>
