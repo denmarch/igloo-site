@@ -544,7 +544,19 @@ background-size: cover;
 .white_text {
 	color: white;
 }
-
+/*.flex_video {
+	height: 0;
+	position: relative;
+	padding-bottom: 56.25%;
+	overflow: hidden;
+}
+.flex_video iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}*/
 /*------------------------------------------- конец СТРАНИЦЫ videos------------------------*/
 
 /*----------------------------------------МЕДИАЗАПРОСЫ ГЛАВНАЯ------------------------------------*/
@@ -660,3 +672,21 @@ background-size: cover;
 
 
 /*--------------конец медиазапросам song-----------------------*/
+
+/*--------------медиазапросы video-----------------------*/
+@media screen and (max-width: 570px) {
+.flex_video {
+	height: 0;
+	position: relative;
+	padding-bottom: 56.25%;
+	overflow: hidden;
+}
+.flex_video iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+}
+/*--------------конец медиа video------------------------*/
