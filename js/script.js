@@ -9,7 +9,8 @@ function nextSlide() {
 }
 
 var playing = true;
-var pauseButton = document.getElementsByClassName('.slider__controls-pause');
+var pauseButton = document.getElementsByClassName('slider__controls-pause')[0];
+console.log(pauseButton);
 
 function pauseSlideshow(){
     pauseButton.innerHTML = 'Play';
@@ -24,6 +25,14 @@ function playSlideshow(){
 }
 
 pauseButton.onclick = function(){
-    if(playing){ pauseSlideshow(); }
-    else{ playSlideshow(); }
+    if(playing) {
+    console.log('Сработало условие true');
+    pauseSlideshow(); }
+    else {
+    console.log('Сработало условие false');
+    playSlideshow(); }
 };
+
+$(document).ready(function(){
+  $('.slick_carousel').slick();
+});

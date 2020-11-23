@@ -39,11 +39,18 @@ body {
 
 img {
   max-width: 100%;
+  
 }
+
+/*ГЛАВНАЯ*/
 
 .container {
   width: 1675px;
   margin: 0 auto;
+}
+
+.container-big {
+  width: 100%;
 }
 
 .visually-hidden {
@@ -75,6 +82,7 @@ background-size: cover;
 .logo__image-jpg {
   position: absolute;
   top: 0;
+  left: 0;
   opacity: 0;
 }
 
@@ -106,6 +114,7 @@ background-size: cover;
   color: white;
   font-family: "Geometria", "Arial", sans-serif;
   font-size: 14px;
+  text-decoration: none;
 }
 
 .header__link-capture {
@@ -132,13 +141,40 @@ background-size: cover;
   list-style: none;
 }
 
-.navigation__link {
+.navigation__link,
+.navigation__link_mobile
+{
   font-family: "Geometria", "Arial", sans-serif;
-  font-size: 18px;
-  color: white;
+  font-size: 35px;
+  color: #a6ced0;
   padding: 10px;
   text-decoration: none;
   cursor: pointer;
+}
+
+.navigation__link_mobile {
+	font-size: 30px;
+}
+
+.navigation__list_mobile {
+	margin: 0;
+	
+	text-align: center;
+	padding: 10px 0 10px 0;
+}
+
+.navigation__link:hover
+{
+ color: #ffffff;
+ text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #29a5ad, 0 0 80px #29a5ad, 0 0 90px #29a5ad, 0 0 100px #265f63, 0 0 150px #265f63;
+}
+
+.navigation__element_mobile, .hamb{
+ display: none;
+}
+
+.slider__catalog {
+  background-color: black;
 }
 
 .slider__show {
@@ -172,27 +208,37 @@ background-size: cover;
   background-image: url("../images/01foto.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 100%;
 
 }
 .slider__foto:nth-of-type(2) {
   background-image: url("../images/02foto.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 100%;
 }
 .slider__foto:nth-of-type(3) {
   background-image: url("../images/03foto.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 100%;
 }
 .slider__foto:nth-of-type(4) {
   background-image: url("../images/04foto.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 100%;
 }
+
+.slider__controls-pause {
+  color: #fff; /* цвет текста */
+  user-select: none; /* убирать выделение текста */
+  background: #7b9b9c; /* фон кнопки */
+  padding: .6em 1.5em; /* отступ от текста */
+  outline: none; /* убирать контур в Mozilla */
+}
+
+
 
 .content-wrapper {
   background-image: url("../images/background_fon.jpg");
@@ -206,8 +252,7 @@ background-size: cover;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 30px 0;
-
+  padding: 30px 15px;
 }
 
 .content-wrap__afisha {
@@ -224,18 +269,41 @@ background-size: cover;
   align-items: center;
 }
 
+.content-wrap__link {
+  color: #a6ced0;
+  
+  text-decoration: none;
+  cursor: pointer;
+}
+.content-wrap__link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #29a5ad, 0 0 80px #29a5ad, 0 0 90px #29a5ad, 0 0 100px #265f63, 0 0 150px #265f63;
+}
+
 .content-wrap__concert {
   display: block;
   width: 600px;
   min-height: auto;
   margin: 0;
+  color: whitesmoke;
+}
+
+.content-wrap__title {
+
+  color: #7b9b9c;
+  text-transform: uppercase;
+}
 }
 
 .content-wrap__store {
   display: block;
-  width: 600px;
+  /*width: 600px;*/
   min-height: auto;
   margin: 0;
+}
+
+.content-wrap__img:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .content-wrap__img {
@@ -254,38 +322,341 @@ background-size: cover;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 30px 15px;
 }
 
 .media-wrap__container {
   display: block;
   width: 440px;
   min-height: 500px;
+  
+}
+
+.media-wrap__title {
+  color: #7b9b9c;
+  text-transform: uppercase;
+}
+
+.media-wrap__list {
+  list-style-image:url(../images/guitar_icon_small.png);
+  color: #000000;
+  text-shadow: 2px 2px 3px #C0C0C0;
+  margin-left: 10px;
 }
 
 .media-wrap__link-video {
-  width: 450px;
-  height: 260px;
-
+  /*width: 450px;
+  height: 260px;*/
+  
+  padding-bottom: 56.25%; /* задаёт высоту контейнера для 16:9 (если 4:3 — поставьте 75%) */
+  height: 0;
+  overflow: hidden;
 }
 
 .media-wrap__video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  border-width: 0;
+  outline-width: 0;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.video_wrap {
+	min-height: 400px;
 }
 
 
 .media-wrap__text {
-  list-style-image: url("../pictures/#");
+  list-style-image:url(../images/guitar_icon_small.png);
+  color: #000000;
+  text-shadow: 2px 2px 3px #C0C0C0;
+  margin-left: 10px;
 }
 
 .footer__wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  min-height: 205px;
 }
+
+.footer__catalog {
+  min-height: 205px;
+  background-image: url("../images/bg-footer.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.footer__copyright {
+  font-family: "Geometria", "Arial", sans-serif;
+  font-size: 15px;
+  color: #a6ced0;
+}
+
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.footer__creation {
+  font-family: "Geometria", "Arial", sans-serif;
+  font-size: 15px;
+  color: #a6ced0;
+}
+
+.footer__icon {
+  margin: 0 20px;
+}
+
+.footer__icon:hover {
+  box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #29a5ad, 0 0 80px #29a5ad, 0 0 90px #29a5ad, 0 0 100px #265f63, 0 0 150px #265f63;
+  border-radius: 50%;
+}
+
+/*-------------------------------------------КОНЕЦ ГЛАВНОЙ------------------------*/
+/*-------------------------------------------СТРАНИЦА ABOUT------------------------*/
+.content_text {
+	display: block;
+	
+	font-size: 25px;
+	color: #000000;
+  text-shadow: 2px 2px 3px #C0C0C0;
+  margin-left: 10px;
+}
+
+.content-wrap__title_about {
+	margin: 0;
+	padding: 10px;
+}
+
+.content-wrap_about-flex {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	
+}
+
+.content-wrap_about-img {
+	width: 50%;
+	flex-shrink: 0;
+}
+
+
+/*-------------------------------------------КОНЕЦ СТРАНИЦЫ ABOUT------------------------*/
+
+/*-------------------------------------------СТРАНИЦА song------------------------*/
+.content-wrap__title_songs {
+	margin: 0;
+	padding: 20px;
+}
+.audio {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 15% 0 15%;
+}
+.audio_wrap {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	font-size: 25px;
+	color: #000000;
+  text-shadow: 2px 2px 3px #C0C0C0;
+}
+.content-wrap_song-img {
+	align: center;
+}
+/*-------------------------------------------КОНЕЦ СТРАНИЦЫ song------------------------*/
+
+/*-------------------------------------------СТРАНИЦА imagenes------------------------*/
+
+.fotogalery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  -moz-user-select: none; user-select: none;
+}
+.fotogalery_img {
+	width: 30%;
+	
+}
+.img_item {
+  /*position: absolute;
+  top: 25%;
+  left: 12.5%;
+  max-width: 24.5%;
+  max-height: 49.5%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-user-select: none; user-select: none;*/
+  cursor: zoom-in;
+}
+/*.img_item:nth-child(4n-2) {left: 37.5%;}
+.img_item:nth-child(4n-1) {left: 62.5%;}
+.img_item:nth-child(4n) {left: 87.5%;}
+.img_item:nth-child(n+5) {top: 75%;}*/
+
+
+
+.img_item:focus {
+  position: fixed;
+  top: 10%;
+  left: 20%;
+  bottom: 20%;
+  z-index: 31;
+  max-width: 100%;
+  max-height: 100%;
+  outline: none;
+  pointer-events: none;
+}
+
+.img_item:focus ~ div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  background: rgba(240,240,240,.9);
+  cursor: zoom-out;
+}
+
+.img_item:hover {
+	filter: brightness(150%);
+}
+
+/*------------------------------------------- конец СТРАНИЦЫ imagenes------------------------*/
+/*------------------------------------------- СТРАНИЦа videos------------------------*/
+.video_content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.white_text {
+	color: white;
+}
+
+/*------------------------------------------- конец СТРАНИЦЫ videos------------------------*/
+
+/*----------------------------------------МЕДИАЗАПРОСЫ ГЛАВНАЯ------------------------------------*/
 
 @media screen and (max-width: 1680px) {
   .container {
     width: 100%;
-  }
+  }}
+  
+@media screen and (max-width: 1500px) {
+	.slider__show {
+    min-height: 928px;
+}}
+
+@media screen and (max-width: 1500px) {
+	.slider__show {
+    min-height: 833px;
+}}
+
+@media screen and (max-width: 1176px) {
+	.slider__show {
+    min-height: 692px;
+}}
+
+@media screen and (max-width: 1023px) {
+	.slider__show {
+    min-height: 688px;
+}
+.navigation__list {
+		display: none;
+}
+}
+
+@media screen and (min-width: 1023px) {
+	.navigation__list_mobile {
+		display: none;
+}
+}
+
+@media screen and (max-width: 768px) {
+	.slider__show {
+    min-height: 504px;
+}}
+
+@media screen and (max-width: 600px) {
+	.slider__show {
+    min-height: 390px;
+}}
+
+@media screen and (max-width: 480px) {
+	.slider__show {
+    min-height: 314px;
+}}
+
+@media screen and (max-width: 320px) {
+	.slider__show {
+    min-height: 211px;
+}}
+
+
+@media screen and (max-width: 320px) {
+	.slider__show {
+    min-height: 211px;
+}}
+
+@media screen and (max-width: 1130px) {
+	.content-wrap {
+	justify-content: space-around;
+	}
+}
+
+@media screen and (max-width: 1349px) {
+	.media-wrap {
+	justify-content: space-around;
+	}
+}
+
+@media screen and (max-width: 648px) {
+	.footer__wrap {
+    justify-content: space-around;
+	}
+	.footer__info {
+	align-items: center;
+	}
+}
+
+@media screen and (max-width: 341px) {
+	.footer__copyright, .footer__creation {
+		font-size: 13px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+.video_wrap {
+	min-height: 325px;
+}
+}
+/*КОНЕЦ МЕДИА ЗАПРОСАМ ГЛАВНОЙ*/
+
+
+/*--------------медиазапросы about-----------------------*/
+@media screen and (max-width: 1024px) {
+.content-wrap_about-flex {
+	flex-direction: column;
+}
+.content-wrap_about-img {
+	width: 100%;
+}
+}
+/*---------------КОНЕЦ МЕДИА ЗАПРОСАМ about*--------------/
+/*--------------медиазапросы song-----------------------*/
+
+
+
+/*--------------конец медиазапросам song-----------------------*/
